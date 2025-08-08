@@ -1,4 +1,3 @@
-package Task3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,14 +6,14 @@ import java.util.Scanner;
 public class Library {
     Scanner sc=new Scanner(System.in);
     List<User> users = new ArrayList<>();
-    List<Book> books = new ArrayList<>();
+    List<Task3.Book> books = new ArrayList<>();
 
     void adduser(User user){
         users.add( user);
         System.out.println("User added successfully ");
     }
 
-    public void addbook(Book book){
+    public void addbook(Task3.Book book){
         books.add(book);
         System.out.println("book added successfully ");
     }
@@ -24,7 +23,7 @@ public class Library {
         }
         else {
 
-            for (Book book : books) {
+            for (Task3.Book book : books) {
                 System.out.println(book);
             }
         }
@@ -43,7 +42,7 @@ public class Library {
     }
     //Main : issue feature to implemented
     public void issueBook(String title) {
-        for (Book book : books) {
+        for (Task3.Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title) && !book.isIssued()) {
                 book.issueBook();
                 System.out.println("Book issued successfully.");
@@ -54,7 +53,7 @@ public class Library {
     }
     //Main : return feature implemented
     public void returnBook(String title) {
-        for (Book book : books) {
+        for (Task3.Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title) && book.isIssued()) {
                 book.isIssued();
                 System.out.println("Book returned successfully.");
